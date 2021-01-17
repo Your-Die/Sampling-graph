@@ -1,0 +1,20 @@
+{
+  "name": "com.chinchillada.graph.sampling",
+  "version": "1.0.0",
+  "displayName": "Chinchillada Sampling Graphs",
+  "description": "",
+  "unity": "2020.2",
+  "unityRelease": "0f1",
+  "dependencies": {
+  "com.chinchillada.foundation" : "1.0.2",
+  "com.chinchillada.distributions" : "1.0.0",
+  "com.chinchillada.pcg" : "1.0.0",
+  "com.github.siccity.xnode" : "1.8.1"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Jordy van Opstal",
+    "email": "jordy_van_opstal@live.nl",
+    "url": "https://jordyvanopstal.com/"
+  }
+}

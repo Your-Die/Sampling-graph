@@ -1,0 +1,135 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 649dc81fa61c41249d0962aa8396a1bc, type: 3}
+  m_Name: New Noise Graph
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: 3930896719856864751}
+  - {fileID: 7017969534436082105}
+  outputNode: {fileID: 3930896719856864751}
+--- !u!114 &3930896719856864751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f41422e7df184537acdf106af30e89fd, type: 3}
+  m_Name: Perlin Noise
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  graph: {fileID: 11400000}
+  position: {x: -216, y: -168}
+  ports:
+    keys:
+    - output
+    values:
+    - _fieldName: output
+      _node: {fileID: 3930896719856864751}
+      _typeQualifiedName: Noise.NoiseConnection, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: noise
+        node: {fileID: 7017969534436082105}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  preview:
+    filterMode: 0
+    texture: {fileID: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    resolution: {x: 100, y: 100}
+  octaveCount: 3
+  persistence: 0.5
+--- !u!114 &7017969534436082105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa53301f4d004b11a676c4a251bd5887, type: 3}
+  m_Name: Sample Noise
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: sampler
+      Entry: 7
+      Data: 0|Function.SampleNoiseNode+SampleX, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+  graph: {fileID: 11400000}
+  position: {x: 312, y: -184}
+  ports:
+    keys:
+    - noise
+    - otherAxis
+    - output
+    values:
+    - _fieldName: noise
+      _node: {fileID: 7017969534436082105}
+      _typeQualifiedName: Noise.NoiseConnection, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 3930896719856864751}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: otherAxis
+      _node: {fileID: 7017969534436082105}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 7017969534436082105}
+      _typeQualifiedName: Function.FunctionConnection, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  preview:
+    filterMode: 0
+    texture: {fileID: 0}
+    resolution: 100
+    color: {r: 0, g: 0, b: 0, a: 1}
+  otherAxis: 1
